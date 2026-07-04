@@ -11,43 +11,47 @@
 <body>
 <aside class="sidebar">
     <div class="brand">
-      <i class="fa-solid fa-building"></i>
-      <span>PayRoll Inc.</span>
+        <img src="build/assets/image/vra.png"  alt="vra_logo" class="logo-img">
+      <h3 class="brand-name">PayRoll Inc.</h3>
     </div>
 
     <nav class="nav">
-      <button class="nav-item active" data-section="dashboard">
+      <button class="nav-item active" href="#" data-section="dashboard">
         <i class="fa-solid fa-chart-line"></i>
-        <span>Dashboard</span>
+        <a href="{{ url('/dashboard') }}">Dashboard</a>
       </button>
       <button class="nav-item" data-section="run-payroll">
         <i class="fa-solid fa-money-check-dollar"></i>
-        <span>Run Payroll</span>
+        <a href="{{ url('/run_payroll') }}">Run Payroll</a>
       </button>
       <button class="nav-item" data-section="employees">
         <i class="fa-solid fa-users"></i>
-        <span>Employees</span>
+        <a href="{{ url('/employees') }}">Users</a>
       </button>
       <button class="nav-item" data-section="reports">
         <i class="fa-solid fa-file-lines"></i>
-        <span>Reports</span>
+        <a href="{{ url('/reports') }}">Reports</a>
       </button>
       <button class="nav-item" data-section="settings">
         <i class="fa-solid fa-gear"></i>
-        <span>Settings</span>
+        <a href="{{ url('/settings') }}">Settings</a>
       </button>
       <button class="nav-item" data-section="support">
         <i class="fa-solid fa-circle-info"></i>
-        <span>Support</span>
+        <a href="{{ url('/userManagement') }}">Employees</a>
       </button>
     </nav>
 
     <div class="logout">
-      <button class="logout-btn" data-section="logout">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        <span>Logout</span>
-      </button>
+        <form action="/logout" method="post">
+            @csrf
+            <button type="submit" class="logout-btn" data-section="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+            </button>
+        </form>
     </div>
+
   </aside>
 
   <main class="content">
